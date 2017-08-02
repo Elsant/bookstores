@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :bookstores, only: [] do
+    resources :books, only: [] do
+      collection do
+        get :select_by_publisher
+        get :sold
+      end
+    end
+  end
 end

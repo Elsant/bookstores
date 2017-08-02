@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :book do
-    title "MyString"
-    publisher nil
+    title "Book"
+    association :publisher
   end
 end
