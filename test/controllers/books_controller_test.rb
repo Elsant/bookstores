@@ -40,17 +40,17 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
       bookstore: @bookstore,
       book: book,
       quantity: quantity
-      )
+    )
   end
 
   def setup_expected_book
     @expected_book = {
+      'id' => 1,
+      'title' => 'First Book',
+      'publisher' => {
         'id' => 1,
-        'title' => 'First Book',
-        'publisher' => {
-            'id' => 1,
-            'name' => 'First Publisher'
-        }
+        'name' => 'First Publisher'
+      }
     }
   end
 

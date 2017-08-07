@@ -4,17 +4,12 @@ class BooksController < ApplicationController
   def select_by_publisher
     @books_by_publisher = @bookstore.books
                                     .publisher_by_name params[:publisher_name]
-
-    if stale? @books_by_publisher
-      render json: @books_by_publisher, include: [:publisher]
-    end
+    render json: @books_by_publisher, include: [:publisher] if stale? @books_by_publisher
   end
 
   def sold
     @sold_books = @bookstore.books.sold
-    if stale? @sold_books
-      render json: @sold_books, include: [:publisher]
-    end
+    render json: @sold_books, include: [:publisher] if stale? @sold_books
   end
 
   private

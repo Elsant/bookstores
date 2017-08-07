@@ -10,6 +10,6 @@ class Book < ApplicationRecord
   }
   scope :sold, -> {
     joins(:bookstorages).includes(:publisher)
-    .where('bookstorages.quantity = 0')
+                        .where('bookstorages.quantity = 0')
   }
 end
