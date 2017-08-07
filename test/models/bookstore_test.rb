@@ -5,5 +5,5 @@ class BookstoreTest < ActiveSupport::TestCase
   should have_many :bookstorages
   should have_many(:books).through(:bookstorages)
 
-  should validate_presence_of :name 
+  should validate_presence_of :name
 end

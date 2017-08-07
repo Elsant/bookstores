@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # noinspection RailsParamDefResolve
   resources :bookstores, only: [] do
     resources :books, only: [] do
       collection do

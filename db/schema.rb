@@ -12,42 +12,42 @@
 
 ActiveRecord::Schema.define(version: 20170802123732) do
 
-  create_table "books", force: :cascade do |t|
-    t.string "title"
-    t.integer "publisher_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["publisher_id"], name: "index_books_on_publisher_id"
+  create_table 'books', force: :cascade do |t|
+    t.string 'title'
+    t.integer 'publisher_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['publisher_id'], name: 'index_books_on_publisher_id'
   end
 
-  create_table "bookstorages", force: :cascade do |t|
-    t.integer "bookstore_id"
-    t.integer "book_id"
-    t.integer "quantity", default: 0, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["book_id"], name: "index_bookstorages_on_book_id"
-    t.index ["bookstore_id"], name: "index_bookstorages_on_bookstore_id"
+  create_table 'bookstorages', force: :cascade do |t|
+    t.integer 'bookstore_id'
+    t.integer 'book_id'
+    t.integer 'quantity', default: 0, null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['book_id'], name: 'index_bookstorages_on_book_id'
+    t.index ['bookstore_id'], name: 'index_bookstorages_on_bookstore_id'
   end
 
-  create_table "bookstores", force: :cascade do |t|
-    t.string "name"
-    t.integer "company_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_bookstores_on_company_id"
+  create_table 'bookstores', force: :cascade do |t|
+    t.string 'name'
+    t.integer 'company_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['company_id'], name: 'index_bookstores_on_company_id'
   end
 
-  create_table "companies", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'companies', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "publishers", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'publishers', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
 end
